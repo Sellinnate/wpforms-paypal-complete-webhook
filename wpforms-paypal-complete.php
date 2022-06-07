@@ -32,7 +32,7 @@ function selli_dev_process_paypal( $fields, $entry, $form_data ) {
 	//}
       
     $client = new GuzzleHttp\Client();
-	$client->request('POST', 'https://yourdomain.ext/webhookpage', [
+	$client->request('POST', 'https://yourdomain.ext/webhookpage', [ //feel free to switch to GET request according to your needs
 		'form_params' => [
             //REMOVE THIS COMMENT AND MAP YOUR FORM DATA TO MATCH YOUR NEEDS (EXAMPLE BELOW)
 			//'first_name' => $fields[1]['value'],
