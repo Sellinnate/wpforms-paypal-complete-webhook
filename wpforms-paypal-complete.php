@@ -26,6 +26,10 @@ if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 
 function selli_dev_process_paypal( $fields, $entry, $form_data ) {
 
+    if ( empty( $data['payment_status'] ) || strtolower( $data['payment_status'] ) !== 'completed' ) {
+        return;
+    }
+
     //EXAMPLE ON HOW TO FILTER WHEN THE WEBHOOK NEEDS TO BE RUN BASED ON FIELDS VALUE
 	//if($fields[1]['value'] == 'undesired value'){
 	//	return;
